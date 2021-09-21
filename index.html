@@ -7,19 +7,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>原神练习导航</title>
     <style>
+        body {
+            background-image: url(IMG/genshin_bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center top; //注意背景图片一般都这么写
+        }
+
         a {
+            color: white;
             display: block;
             text-decoration: none;
-            font-size: 30px;
             text-align: center;
-            margin: 50px 0;
+        }
+
+        a:hover {
+            color: #00A0C6;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        table,
+        td {
+            color: white;
+            width: 900px;
+            font-size: 30px;
+            border: 1px solid skyblue;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table .title {
+            color: orange;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: 800;
+        }
+
+        .back {
+            width: 950px;
+            height: 1180px;
+            background: rgba(0, 0, 0, .7);
+            margin: 0 auto;
         }
     </style>
 </head>
 
 <body>
-    <a href="genshin_card.html">前往原神card模块（盒子，内外边距，阴影）</a>
-    <a href="genshin_news.html">前往原神情报站模块（盒子，边框，内外边距）</a>
+
+    <div class="back">
+        <table align="center">
+            <tr>
+                <td class="title">案例名称</td>
+                <td class="title">涉及内容</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_card.html">原神card模块</a></td>
+                <td>盒子，内外边距，阴影</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_news.html">原神情报站模块</a></td>
+                <td>盒子，边框，内外边距</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_nav.html">变化导航栏</a></td>
+                <td>背景，伪类选择器</td>
+            </tr>
+        </table>
+    </div>
+
+
 </body>
 
 </html>
