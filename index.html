@@ -7,10 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>原神练习导航</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-image: url(IMG/genshin_bg.jpg);
             background-repeat: no-repeat;
-            background-position: center top; //注意背景图片一般都这么写
+            background-position: center top;
+            /* //注意背景图片一般都这么写 */
+            background-attachment: fixed;
         }
 
         a {
@@ -24,6 +31,10 @@
             color: #00A0C6;
             cursor: pointer;
             text-decoration: underline;
+        }
+
+        table {
+            margin: 5px auto;
         }
 
         table,
@@ -46,9 +57,10 @@
 
         .back {
             width: 950px;
-            height: 1180px;
+            height: 2000px;
             background: rgba(0, 0, 0, .7);
-            margin: 0 auto;
+            margin: auto;
+            padding: 20px;
         }
     </style>
 </head>
