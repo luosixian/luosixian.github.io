@@ -5,90 +5,195 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>原神练习导航</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-image: url(IMG/genshin_bg.jpg);
-            background-repeat: no-repeat;
-            background-position: center top;
-            /* //注意背景图片一般都这么写 */
-            background-attachment: fixed;
-        }
-
-        a {
-            color: white;
-            display: block;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        a:hover {
-            color: #00A0C6;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        table {
-            margin: 5px auto;
-        }
-
-        table,
-        td {
-            color: white;
-            width: 900px;
-            font-size: 30px;
-            border: 1px solid skyblue;
-            border-collapse: collapse;
-            text-align: center;
-            padding: 20px;
-        }
-
-        table .title {
-            color: orange;
-            font-size: 20px;
-            padding: 10px;
-            font-weight: 800;
-        }
-
-        .back {
-            width: 950px;
-            height: 2000px;
-            background: rgba(0, 0, 0, .7);
-            margin: auto;
-            padding: 20px;
-        }
-    </style>
+    <title>原神练习导航首页</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <div class="back">
-        <table align="center">
-            <tr>
-                <td class="title">案例名称</td>
-                <td class="title">涉及内容</td>
-            </tr>
-            <tr>
-                <td><a href="genshin_card.html">原神card模块</a></td>
-                <td>盒子，内外边距，阴影</td>
-            </tr>
-            <tr>
-                <td><a href="genshin_news.html">原神情报站模块</a></td>
-                <td>盒子，边框，内外边距</td>
-            </tr>
-            <tr>
-                <td><a href="genshin_nav.html">变化导航栏</a></td>
-                <td>背景，伪类选择器</td>
-            </tr>
-        </table>
+    <!-- 头部区域开始 -->
+    <div class="header w">
+        <!-- logo部分 -->
+        <div class="logo">
+            <img src="IMG/cz.gif" height="42px" alt="">
+            这是个睿智网站
+        </div>
+        <!-- 导航栏nav -->
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="IMG/fox.PNG">来一份涩图</a></li>
+                <li><a href="#">情报速递</a></li>
+            </ul>
+        </div>
+        <!-- 搜索模块  -->
+        <div class="search">
+            <input type="text" value="输入关键词">
+            <button></button>
+        </div>
+        <!-- 用户模块 -->
+        <div class="user">
+            <img src="IMG/balala.png" height="30px" alt="">
+            芭芭拉
+        </div>
     </div>
-
-
+    <!-- 头部区域结束 -->
+    <!-- banner部分start -->
+    <div class="banner">
+        <!-- 版心 -->
+        <div class="w">
+            <div class="subnav">
+                <ul>
+                    <li><a href="#">新角色刻晴介绍 <span>&gt;</span></a></li>
+                    <li><a href="#">主角性别选择推荐 <span>&gt;</span></a></li>
+                    <li><a href="#">角色养成所需素材 <span>&gt;</span></a></li>
+                    <li><a href="#">宝箱位置攻略 <span>&gt;</span></a></li>
+                    <li><a href="#">新手前期玩法 <span>&gt;</span></a></li>
+                    <li><a href="#">角色突破材料介绍 <span>&gt;</span></a></li>
+                    <li><a href="#">珊瑚宫心海评测 <span>&gt;</span></a></li>
+                    <li><a href="#">支线任务一览 <span>&gt;</span></a></li>
+                    <li><a href="#">周年活动介绍 <span>&gt;</span></a></li>
+                </ul>
+            </div>
+            <!-- 日程表模块 -->
+            <div class="calendar">
+                <h2>我的日程表</h2>
+                <div class="bd">
+                    <ul>
+                        <li>
+                            <h4>玩原神</h4>
+                            <p>请问您下载了吗</p>
+                        </li>
+                        <li>
+                            <h4>玩FGO</h4>
+                            <p>请问您签到了吗</p>
+                        </li>
+                        <li>
+                            <h4>玩公主连接</h4>
+                            <p>请问您出刀了吗</p>
+                        </li>
+                        <a href="#" class="more">全部日程</a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner部分end -->
+    <!--     精品推荐模块开始 -->
+    <div class="goods w">
+        <h3>当前进度</h3>
+        <ul>
+            <li><a href="#">蒙德往事</a></li>
+            <li><a href="#">璃月往事</a></li>
+            <li><a href="#">稻妻往事</a></li>
+            <li><a href="#">至冬往事</a></li>
+            <li><a href="#">坎瑞亚往事</a></li>
+        </ul>
+        <a href="#" class="mod">修改兴趣</a>
+    </div>
+    <!--     精品推荐模块结束 -->
+    <!-- box核心内容开始 -->
+    <div class="box w">
+        <div class="box-hd">
+            <h3>当前进度</h3>
+            <a href="#">查看全部</a>
+        </div>
+        <div class="box-bd">
+            <ul class="clearfix">
+                <li>
+                    <a href="genshin_card.html"> <img src="IMG/thumb/thumb1.png" alt=""></a>
+                    <h4>一个谜之原神card模块，主要是练习内外边距和阴影</h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="genshin_nav.html"> <img src="IMG/thumb/thumb2.png" alt=""></a>
+                    <h4>一个谜之原神+A手变化导航栏，练习背景和伪类选择器</h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="genshin_news.html"> <img src="IMG/thumb/thumb3.png" alt=""></a>
+                    <h4>一个提瓦特新闻模块，练习边框和内外边距</h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="genshin_index.html"> <img src="IMG/thumb/thumb4.png" alt=""></a>
+                    <h4>一个挺离谱的index界面，给大伙儿整无语了</h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+                <li>
+                    <a href="#"> <img src="IMG/thumb/thumb0.png" alt=""></a>
+                    <h4>还在学习中捏<br /><br /></h4>
+                    <div class="info"><span>点赞</span> • 666人觉得很睿智</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- box核心内容结束 -->
+    <!--     footer模块开始 -->
+    <div class="footer">
+        <div class="w">
+            <div class="copyright">
+                <img src="IMG/nice.png" alt="">
+                <p>芭芭拉是西风骑士团的祈礼牧师，同时也是蒙德城的闪耀偶像。<br>
+                    她用水元素的力量治疗伤口，用轻快的歌声和舞步舒缓人们疲惫的心。<br>
+                    在蒙德人的心里，芭芭拉拥有着某种神奇的魔法，能将患者的身心一起治愈——<br>
+                    而在芭芭拉的心中，这种神奇的魔法名叫「切实的努力」。</p>
+                <a href="#" class="app">领取芭芭拉</a>
+            </div>
+            <div class="links">
+                <dl>
+                    <dt>关于芭芭拉</dt>
+                    <dd><a href="#">角色故事</a></dd>
+                    <dd><a href="#">属性数据</a></dd>
+                    <dd><a href="#">天赋</a></dd>
+                    <dd><a href="#">升级材料</a></dd>
+                    <dd><a href="#">配装推荐</a></dd>
+                    <dd><a href="#">人物考据</a></dd>
+                    <dd><a href="IMG/fox.PNG">涩图</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于原神</dt>
+                    <dd><a href="#">攻略</a></dd>
+                    <dd><a href="#">壁纸</a></dd>
+                    <dd><a href="#">沙雕图</a></dd>
+                    <dd><a href="#">角色图鉴</a></dd>
+                    <dd><a href="#">武器图鉴</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我</dt>
+                    <dd><a href="#">简历</a></dd>
+                    <dd><a href="#">XP</a></dd>
+                    <dd><a href="#">老婆</a></dd>
+                    <dd><a href="#">联系我</a></dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <!--     footer模块结束 -->
 </body>
 
 </html>

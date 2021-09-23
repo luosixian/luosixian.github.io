@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原神练习导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(IMG/genshin_bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            /* //注意背景图片一般都这么写 */
+            background-attachment: fixed;
+        }
+
+        a {
+            color: white;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        a:hover {
+            color: #00A0C6;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        table {
+            margin: 5px auto;
+        }
+
+        table,
+        td {
+            color: white;
+            width: 900px;
+            font-size: 30px;
+            border: 1px solid skyblue;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table .title {
+            color: orange;
+            font-size: 20px;
+            padding: 10px;
+            font-weight: 800;
+        }
+
+        .back {
+            width: 950px;
+            height: 2000px;
+            background: rgba(0, 0, 0, .7);
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="back">
+        <table align="center">
+            <tr>
+                <td class="title">案例名称</td>
+                <td class="title">涉及内容</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_card.html">原神card模块</a></td>
+                <td>盒子，内外边距，阴影</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_news.html">原神情报站模块</a></td>
+                <td>盒子，边框，内外边距</td>
+            </tr>
+            <tr>
+                <td><a href="genshin_nav.html">变化导航栏</a></td>
+                <td>背景，伪类选择器</td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+
+</html>
