@@ -259,6 +259,8 @@ a {
 }
 
 .box-bd ul li {
+    /* 子绝父相 */
+    position: relative;
     float: left;
     width: 228px;
     height: 270px;
@@ -271,7 +273,7 @@ a {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .1);
 }
 
-.box-bd ul li img {
+.box-bd ul li a img {
     width: 100%;
 }
 
@@ -280,6 +282,12 @@ a {
     font-size: 14px;
     color: #050505;
     font-weight: 400;
+}
+
+.box-bd ul li em {
+    position: absolute;
+    top: -11px;
+    right: -10px;
 }
 
 .box-bd .info {
