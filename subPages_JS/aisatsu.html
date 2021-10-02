@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 900px;
+            line-height: 100px;
+            font-size: 50px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img src="" alt="">
+    <div></div>
+    <script>
+        var img = document.querySelector('img');
+        var div = document.querySelector('div');
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        if (h < 12) {
+            img.src = '../IMG/balala.png';
+            div.innerHTML = '现在是' + h + '点' + m + '分，我芭芭拉祝您上午好';
+        } else if (h < 18) {
+            img.src = '../IMG/mua.png';
+            div.innerHTML = '现在是' + h + '点' + m + '分，我圣嘉然祝您下午好';
+        } else {
+            img.src = '../IMG/pm.jpg';
+            div.innerHTML = '现在是' + h + '点' + m + '分，我派蒙祝您晚上好';
+        }
+
+    </script>
+
+</body>
+
+</html>
