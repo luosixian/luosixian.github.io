@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 300px;
+            margin: 100px auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 16px;
+        }
+
+        thead tr {
+            height: 30px;
+            background-color: skyblue;
+        }
+
+        thead tr {
+            height: 30px;
+
+        }
+
+        tbody td {
+            border-bottom: 1px solid #d7d7d7;
+            font-size: 14px;
+            color: blue;
+            padding: 10px 0px;
+        }
+
+        .bg {
+            background-color: rgb(226, 223, 223);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" name="" id="j_cbAll">
+                </th>
+                <th>什么名字</th>
+                <th>是老婆嘛</th>
+            </tr>
+        </thead>
+        <tbody id='j_tb'>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>芭芭拉</td>
+                <td>是的</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>雷电将军</td>
+                <td>是的</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>心海</td>
+                <td>是的</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="" id="">
+                </td>
+                <td>莫娜</td>
+                <td>是的</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //------------鼠标移到某一行改变底色-----------------
+        let trs = document.querySelector('tbody').querySelectorAll('tr');
+        for (let i = 0; i < trs.length; i++) {
+            trs[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            trs[i].onmouseout = function () {
+                this.className = '';
+            }
+        }
+        //---------------实现全选框影响小选择框-----------------------
+        let j_cbAll = document.getElementById('j_cbAll');
+        let j_tbs = document.getElementById('j_tb').getElementsByTagName('input');
+        j_cbAll.onclick = function () {
+            for (let i = 0; i < j_tbs.length; i++) {
+                j_tbs[i].checked = this.checked;
+            }
+        }
+        //--------------实现小选择框影响全选框----------------
+        for (let i = 0; i < j_tbs.length; i++) {
+            j_tbs[i].onclick = function () {
+                //每个小按钮被点击，检查所有小按钮
+                let flag = true; //全选按钮默认打开
+                for (let j = 0; j < j_tbs.length; j++) {
+                    if (!j_tbs[j].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                //检查完了看flag决定给不给全选
+                j_cbAll.checked = flag;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
