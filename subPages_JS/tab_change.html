@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tab {
+            height: 300px;
+            width: 800px;
+            margin: 100px auto;
+        }
+
+        .tab_list {
+            height: 39px;
+            background-color: rgb(219, 214, 214);
+        }
+
+        .tab_con {
+            height: 200px;
+        }
+
+        .tab_list li {
+            float: left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        .tab_list .current {
+            background-color: red;
+            color: #fff;
+        }
+
+        .item {
+            padding: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class="current">角色立绘</li>
+                <li>涩图</li>
+                <li>角色故事</li>
+                <li>配装推荐</li>
+                <li>表情包</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item " style="display: block;"><img src="../IMG/balala.png" alt=""></div>
+            <div class="item"><img src="../IMG/fox.PNG" alt="" style="width: 760px;"></div>
+            <div class="item">
+                <p>
+                    芭芭拉是西风教会的祈礼牧师，同时也是蒙德城的闪耀偶像。
+                    「只要看到芭芭拉，心情就能变好。」—一蒙德城里流传着这样的说法。
+                    实际上，不只是心情，伤口或者身体不适也能一起治愈。
+                    人们知道，芭芭拉可以通过水元素的「神之眼」，释放奇妙的魔法。
+                    但在芭芭拉心中，最神奇的魔法只有「切实的努力」而已。
+                </p>
+            </div>
+            <div class="item">我怎么知道？</div>
+            <div class="item"><img src="../IMG/nice.png" alt=""></div>
+        </div>
+    </div>
+    <script>
+        let tab_list = document.querySelector('.tab_list');
+        let lis = tab_list.querySelectorAll('li');
+        let items = document.querySelectorAll('.item');
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                //功能1：选项卡，随便点一个，只有当前这个底色变红
+                for (let i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                //功能2：点某个东西只有对应内容才出现
+                for (let i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                let index = this.getAttribute('index');
+                items[index].style.display = 'block';
+            }
+        }
+
+    </script>
+
+
+</body>
+
+</html>
