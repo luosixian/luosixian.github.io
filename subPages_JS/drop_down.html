@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav {
+            width: 600px;
+            margin: 100px auto;
+        }
+
+        .nav>li {
+            position: relative;
+            float: left;
+            height: 41px;
+            width: 100px;
+            line-height: 41px;
+            /* padding: 0 20px; */
+            text-align: center;
+        }
+
+        .nav>li>a {
+            /* padding: 10px 25px; */
+            height: 100%;
+            line-height: 41px;
+            color: #333;
+        }
+
+        /* .nav>li>a:hover {
+            background-color: #eee;
+        } */
+
+        .nav ul {
+            display: none;
+            position: absolute;
+            top: 41px;
+            /* 我真牛逼 */
+            left: calc(50% - 50px);
+            width: 100px;
+            border-left: 1px solid #fecc5B;
+            border-right: 1px solid #fecc5B;
+        }
+
+        .nav ul li {
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #fecc5B;
+            /* padding: 10px 0; */
+        }
+
+        .nav ul li a {
+            padding: 11px 22px;
+        }
+
+        .nav ul li a:hover {
+            background-color: #FFF5DA;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>
+            <a href="#">芭芭拉</a>
+            <ul>
+                <li>
+                    <a href="#">角色故事</a>
+                </li>
+                <li>
+                    <a href="#">语音试听</a>
+                </li>
+                <li>
+                    <a href="#">配装推荐</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">雷电将军</a>
+            <ul>
+                <li>
+                    <a href="#">角色故事</a>
+                </li>
+                <li>
+                    <a href="#">语音试听</a>
+                </li>
+                <li>
+                    <a href="#">配装推荐</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">珊瑚宫心海</a>
+            <ul>
+                <li>
+                    <a href="#">角色故事</a>
+                </li>
+                <li>
+                    <a href="#">语音试听</a>
+                </li>
+                <li>
+                    <a href="#">配装推荐</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">莫娜</a>
+            <ul>
+                <li>
+                    <a href="#">角色故事</a>
+                </li>
+                <li>
+                    <a href="#">语音试听</a>
+                </li>
+                <li>
+                    <a href="#">配装推荐</a>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+    <script>
+        let nav = document.querySelector('.nav');
+        let lis = nav.children;
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.style.backgroundColor = '#eee';
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+                this.style.backgroundColor = '';
+            }
+        }
+    </script>
+
+</body>
+
+</html>
