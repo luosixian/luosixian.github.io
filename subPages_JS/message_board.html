@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            height: 26px;
+            width: 200px;
+            line-height: 26px;
+            margin: 5px 0;
+            padding-left: 10px;
+            font-size: 20px;
+            background-color: #ccc;
+        }
+
+        textarea {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id="" cols="30" rows="10" placeholder="请输入您的老婆"></textarea>
+    <button>展示我的老婆</button>
+    <ul>
+    </ul>
+    <script>
+        let btn = document.querySelector('button');
+        let text = document.querySelector('textarea');
+        let ul = document.querySelector('ul');
+        btn.onclick = function () {
+            if (text.value == '') alert('未检测到内容');
+            else {
+                // 创建
+                let li = document.createElement('li');
+                // 添加
+                ul.insertBefore(li, ul.children[0]);
+                li.innerHTML = text.value; //先添加再赋值和先赋值再添加一样
+            }
+        }
+    </script>
+
+</body>
+
+</html>
