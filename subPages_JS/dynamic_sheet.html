@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            width: 40px;
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>得分</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        //1.准备数据
+        let datas = [{
+            name: '芭芭拉',
+            gender: '女',
+            score: '100'
+        }, {
+            name: '心海',
+            gender: '女',
+            score: '98'
+        }, {
+            name: '雷电将军',
+            gender: '女',
+            score: '96'
+        }, {
+            name: '莫娜',
+            gender: '女',
+            score: '94'
+        }, {
+            name: '香菱',
+            gender: '女',
+            score: '92'
+        }, {
+            name: '刻晴',
+            gender: '女',
+            score: '90'
+        }];
+        // 在tbody里创建行
+        let tbody = document.querySelector('tbody')
+        for (let i = 0; i < datas.length; i++) {
+            let tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            //在tr里面创建单元格,注意这里的循环写法
+            for (let k in datas[i]) {
+                //每次循环创建一个单元格
+                let td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerHTML = datas[i][k];
+            }
+            //创建删除按钮
+            let td = document.createElement('td');
+            tr.appendChild(td);
+            //复习：innerHTML识别HTML标签
+            td.innerHTML = '<a href="javascript:;">我不服,删除</a>';
+        }
+        let as = document.querySelectorAll('a');
+        for (let i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                //node.removeChild
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
