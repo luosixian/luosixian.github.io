@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 500px;
+            height: 200px;
+            margin: 200px auto;
+        }
+
+        span {
+            display: inline-block;
+            height: 80px;
+            width: 80px;
+            padding: 10px;
+            color: white;
+            font-size: 30px;
+            background-color: black;
+            text-align: center;
+            line-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>离2022年还有多久啊</p>
+    <div>
+        <span class="day"></span>
+        <span class="hour"></span>
+        <span class="minute"></span>
+        <span class="second"></span>
+    </div>
+    <script>
+        let day = document.querySelector('.day')
+        let hour = document.querySelector('.hour');
+        let minute = document.querySelector('.minute');
+        let second = document.querySelector('.second');
+        let inputTime = +new Date('2022-1-1 0:0:0');
+
+        //2. 开启定时器
+        countDown(); //注意为什么这么写。是为了防止第一次刷新的空白
+        setInterval(countDown, 1000);
+        function countDown() {
+            var nowTime = +new Date();
+            var times = (inputTime - nowTime) / 1000;  //毫秒 - 秒
+            let restD = Math.floor(times / (24 * 60 * 60));
+            day.innerHTML = restD + ' 天';
+            let restH = Math.floor((times - restD * 24 * 60 * 60) / (60 * 60));
+            hour.innerHTML = restH + ' 时';
+            let restM = Math.floor((times - restD * 24 * 60 * 60 - restH * 60 * 60) / 60);
+            minute.innerHTML = restM + ' 分';
+            let restS = Math.floor(times - restD * 24 * 60 * 60 - restH * 60 * 60 - restM * 60);
+            second.innerHTML = restS + ' 秒';
+        }
+    </script>
+</body>
+
+</html>
