@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 35px;
+            width: 800px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="welcome"></div>
+    <div id="countdown"></div>
+    <script>
+        // 1. 去掉问号
+        let params = location.search.substr(1);
+        // 2. 分割字符串
+        let arr = params.split('=');
+        console.log(arr);
+        // 3. 数据写入div
+        let div1 = document.querySelector('#welcome')
+        div1.innerHTML = '亲爱的用户 ' + arr[1] + ' <br>欢迎回来';
+        // 4. 跳转主页
+        let div2 = document.querySelector('#countdown');
+        let timer = 5;
+        setInterval(function () {
+            if (timer == 0) location.href = 'https://luosixian.github.io/';
+            else {
+                div2.innerHTML = '您将在' + timer + '秒后自动跳转到首页';
+                timer--;
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>
