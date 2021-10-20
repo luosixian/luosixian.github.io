@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .preview {
+            width: 150px;
+            height: 267px;
+            position: relative;
+            margin: 100px 200px;
+        }
+
+        .preview img {
+            width: 150px;
+        }
+
+        .preview .big img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600px;
+        }
+
+        .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 130px;
+            background-color: #FEDE4F;
+            opacity: .6;
+            border: 1px solid #ccc;
+            cursor: move;
+        }
+
+        .big {
+            display: none;
+            position: absolute;
+            left: 160px;
+            top: 0;
+            height: 585px;
+            width: 450px;
+            background-color: pink;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="preview">
+        <img src="../IMG/genshen_vertical.jpg" alt="">
+        <div class="mask"></div>
+        <div class="big">
+            <img class='bigImg' src="../IMG/genshen_vertical.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        // 1. 获取
+        let preview = document.querySelector('.preview');
+        let mask = document.querySelector('.mask');
+        let big = document.querySelector('.big');
+        // 2. 鼠标经过preview，打开mask和big
+        preview.addEventListener('mouseover', function () {
+            mask.style.display = 'block';
+            big.style.display = 'block';
+        })
+        preview.addEventListener('mouseout', function () {
+            mask.style.display = 'none';
+            big.style.display = 'none';
+        })
+        // 3. mask必须在鼠标中间
+        preview.addEventListener('mousemove', function (e) {
+            let x = e.pageX - this.offsetLeft;
+            let y = e.pageY - this.offsetTop;
+            let maskX = x - mask.offsetWidth / 2;
+            let maskY = y - mask.offsetHeight / 2;
+            // 4. mask不能出框
+            let maskXMax = preview.offsetWidth - mask.offsetWidth;
+            let maskYMax = preview.offsetHeight - mask.offsetHeight;
+            if (maskX < 0) maskX = 0;
+            else if (maskX > maskXMax) maskX = maskXMax;
+            if (maskY < 0) maskY = 0;
+            else if (maskY > maskYMax) {
+                maskY = maskYMax;
+            }
+            mask.style.left = maskX + 'px';
+            mask.style.top = maskY + 'px';
+            // 5. 大图片跟着动 - 好难想这里
+            let bigImg = document.querySelector('.bigImg');
+            let bigXMax = bigImg.offsetWidth - big.offsetWidth;
+            let bigYMax = bigImg.offsetHeight - big.offsetHeight;
+            let bigX = maskX * bigXMax / maskXMax;
+            let bigY = maskY * bigYMax / maskYMax;
+            bigImg.style.left = -bigX + 'px'; //别忘了给bigImg设置定位
+            bigImg.style.top = -bigY + 'px';
+        })
+
+    </script>
+</body>
+
+</html>
