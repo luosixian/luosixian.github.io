@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .tb-promo img {
+            width: 520px;
+        }
+
+        .prev,
+        .next {
+            display: none;
+            position: absolute;
+            /* 垂直居中 */
+            top: 50%;
+            margin-top: -20px;
+            width: 25px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, .5);
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .prev:hover,
+        .next:hover {
+            color: blue;
+        }
+
+        .prev {
+            left: 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .next {
+            right: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .tb-promo ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600%;
+            z-index: -1;
+        }
+
+        .tb-promo ul li {
+            float: left;
+        }
+
+        .tb-promo .promo-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            /* width: 90px; */
+            height: 13px;
+            background-color: rgba(255, 255, 255, .3);
+            border-radius: 7px;
+        }
+
+        .tb-promo .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .tb-promo .promo-nav .selected {
+            background-color: #ff5000;
+        }
+    </style>
+    <script src="animate.js"></script> <!-- 他这个必须写在"carousel.js"上面 -->
+    <script src="carousel.js"></script>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <a href="javascript:;" class="prev">&lt;</a>
+        <a href="javascript:;" class="next">&gt;</a>
+        <ul>
+            <li>
+                <a href="javascript:;"><img src="../IMG/genshin.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="../IMG/genshin_bg3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="../IMG/genshin_bg2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="../IMG/genshin_bg1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="javascript:;"><img src="../IMG/genshin_bg.jpg" alt=""></a>
+            </li>
+        </ul>
+        <ol class="promo-nav">
+
+        </ol>
+    </div>
+</body>
+
+</html>
