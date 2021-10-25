@@ -43,28 +43,39 @@ window.addEventListener('load', function () {
     let first = ul.children[0].cloneNode(true);
     ul.appendChild(first);
     let num = 0; // 负责管图片
+    let flag = true; // 节流阀
     next.addEventListener('click', function () {
-        if (num == ul.children.length - 1) {
-            ul.style.left = 0;
-            num = 0;
+        if (flag) {
+            flag = false; //关闭节流阀
+            if (num == ul.children.length - 1) {
+                ul.style.left = 0;
+                num = 0;
+            }
+            num++;
+            animate(ul, -num * tbpromoWidht, function () {
+                flag = true; //打开节流阀
+            });
+            circle++;
+            circle = circle == ul.children.length - 1 ? 0 : circle;
+            circleChange()
         }
-        num++;
-        animate(ul, -num * tbpromoWidht);
-        circle++;
-        circle = circle == ul.children.length - 1 ? 0 : circle;
-        circleChange()
     });
     // 5. 左按钮带图片左滚 依然是无缝滚动
     prev.addEventListener('click', function () {
-        if (num == 0) {
-            num = ul.children.length - 1;
-            ul.style.left = -num * tbpromoWidht + 'px';  // px依然容易忘
+        if (flag) {
+            flag = false; //关闭节流阀
+            if (num == 0) {
+                num = ul.children.length - 1;
+                ul.style.left = -num * tbpromoWidht + 'px';  // px依然容易忘
+            }
+            num--;
+            animate(ul, -num * tbpromoWidht, function () {
+                flag = true; //打开节流阀
+            });
+            circle--;
+            circle = circle == -1 ? ol.children.length - 1 : circle;
+            circleChange();
         }
-        num--;
-        animate(ul, -num * tbpromoWidht);
-        circle--;
-        circle = circle == -1 ? ol.children.length - 1 : circle;
-        circleChange();
     });
     function circleChange() {
         for (let i = 0; i < ol.children.length; i++) {

@@ -10,7 +10,8 @@ function animate(obj, target, callback) {
         if (obj.offsetLeft == target) {
             //停止定时器
             clearInterval(obj.timer);
-            if (callback) callback();
+            //if (callback) callback();
+            callback && callback();   //高级写法
         }
     }, 15)
 }
