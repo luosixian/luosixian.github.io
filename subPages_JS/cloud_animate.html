@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .c-nav {
+            position: relative;
+            height: 50px;
+            width: 1200px;
+            margin: 200px auto;
+            padding-left: 40px;
+            background-color: pink;
+        }
+
+        .cloud {
+            /* display: none; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 140px;
+            height: 50px;
+            background: url(../IMG/nice.png) 0px -33px no-repeat;
+            opacity: .5;
+        }
+
+        .c-nav ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .c-nav ul li {
+            float: left;
+            width: 80px;
+            line-height: 50px;
+            margin-right: 75px;
+        }
+    </style>
+    <script src="animate.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            // 1. 获取
+            let cloud = document.querySelector('.cloud');
+            let c_nav = document.querySelector('.c-nav');
+            let lis = c_nav.querySelectorAll('li');
+            // 2. 鼠标经过云来，离开云走
+            // 会更新的起始位置
+            let current = 0;
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function () {
+                    animate(cloud, this.offsetLeft);
+                });
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(cloud, current);
+                });
+                lis[i].addEventListener('click', function () {
+                    current = this.offsetLeft;
+                })
+            }
+        })
+    </script>
+</head>
+
+<body>
+    <div class="c-nav">
+        <span class="cloud"></span>
+        <ul>
+            <li class="current"><a href="javascript:;">提瓦特往事</a></li>
+            <li><a href="javascript:;">蒙德往事</a></li>
+            <li><a href="javascript:;">璃月往事</a></li>
+            <li><a href="javascript:;">稻妻往事</a></li>
+            <li><a href="javascript:;">至冬往事</a></li>
+            <li><a href="javascript:;">坎瑞亚往事</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
