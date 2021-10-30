@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tabsbox {
+            position: relative;
+            height: 400px;
+            width: 800px;
+            border: 1px solid lightsalmon;
+            margin: 120px auto;
+        }
+
+        .firstnav {
+            position: relative;
+        }
+
+        .firstnav ul {
+            overflow: hidden;
+        }
+
+        .firstnav ul li {
+            float: left;
+            position: relative;
+            width: 80px;
+            height: 50px;
+            border-right: 1px solid #ccc;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .firstnav ul li.liactive {
+            border-bottom: 2px solid #fff;
+            z-index: 9;
+        }
+
+        .firstnav ul li span:first-child {
+            cursor: text;
+        }
+
+        .firstnav ul li span:last-child {
+            display: inline-block;
+            position: absolute;
+            /* user-select: none; */
+            font-size: 12px;
+            top: -20px;
+            right: 1px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #tab input {
+            width: 80%;
+            height: 60%;
+        }
+
+        .tabadd {
+            position: absolute;
+            /* width: 100px; */
+            top: 0;
+            right: 0;
+        }
+
+        .tabadd span {
+            /* display: block; */
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            float: right;
+            margin: 10px;
+            cursor: pointer;
+            /* user-select: none; */
+        }
+
+        .tabscon {
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            padding: 30px;
+            top: 50px;
+            left: 0px;
+            box-sizing: border-box;
+            border-top: 1px solid #ccc;
+        }
+
+        .tabscon section {
+            display: none;
+        }
+
+        .tabscon .conactive {
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tabsbox" id="tab">
+        <!-- 标签 -->
+        <div class="firstnav">
+            <ul>
+                <li class="liactive"><span>测试1</span><span class="iconfont icon-x">x</span></li>
+                <li><span>测试2</span><span class="iconfont icon-x">x</span></li>
+                <li><span>测试3</span><span class="iconfont icon-x">x</span></li>
+            </ul>
+            <div class="tabadd">
+                <span>+</span>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div class="tabscon">
+            <section class="conactive">内容1</section>
+            <section>内容2</section>
+            <section>内容3</section>
+        </div>
+    </div>
+    <script src="oop_tab.js"></script>
+</body>
+
+</html>
