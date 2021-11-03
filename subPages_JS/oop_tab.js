@@ -1,7 +1,5 @@
-let that;
 class Tab {
     constructor(id) {
-        that = this;
         //获取
         this.main = document.querySelector(id);  //拿到最大盒子
         this.add = this.main.querySelector('.tabadd');
@@ -13,12 +11,12 @@ class Tab {
         this.updateNode();//获取当前有几个li和section
         for (let i = 0; i < this.lis.length; i++) {
             this.lis[i].index = i;
-            this.lis[i].onclick = this.toggleTab;
-            this.remove[i].onclick = this.removeTab;
+            this.lis[i].onclick = this.toggleTab.bind(this.lis[i], this);
+            this.remove[i].onclick = this.removeTab.bind(this.remove[i], this);
             this.spans[i].ondblclick = this.editTab;
             this.sections[i].ondblclick = this.editTab;
         }
-        this.add.onclick = this.addTab;
+        this.add.onclick = this.addTab.bind(this.add, this);;
     }
     //用于更新li和section
     updateNode() {
@@ -28,7 +26,7 @@ class Tab {
         this.spans = this.main.querySelectorAll('.firstnav li span:first-child');
     }
     // 1. 切换功能
-    toggleTab() {
+    toggleTab(that) {
         that.clearClass();
         this.className = 'liactive';
         that.sections[this.index].className = 'conactive';
@@ -41,7 +39,7 @@ class Tab {
         }
     }
     // 2. 添加功能
-    addTab() {
+    addTab(that) {
         that.clearClass();
         // 创建新元素
         let li = '<li class="liactive"><span>双击修改</span><span class="iconfont icon-x">x</span></li>';
@@ -52,7 +50,7 @@ class Tab {
         that.init();
     }
     // 3. 删除
-    removeTab(e) {
+    removeTab(that, e) {
         //阻止冒泡，因为点了x，会冒泡给父亲li也会相当于被点击，会触发toggle
         e.stopPropagation();
         let index = this.parentNode.index;
