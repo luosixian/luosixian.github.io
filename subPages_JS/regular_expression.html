@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .span {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" class="uname">
+    <span> 请输入用户名(6-16位)</span>
+    <h5>用户名可以包含字母 (a-z)、数字 (0-9)、短划线 (-)、下划线 (_)</h5>
+    <script>
+        let rg = /^[a-zA-Z0-9_-]{6,16}$/;  //{6,16} 16和逗号之间不准空格
+        let uname = document.querySelector('.uname');
+        let span = document.querySelector('span');
+        uname.onblur = function () {
+            if (rg.test(this.value)) {
+                span.className = 'right';
+                span.innerHTML = '格式正确';
+            }
+            else {
+                span.className = 'wrong';
+                span.innerHTML = '格式不正确';
+            }
+        }
+    </script>
+</body>
+
+</html>
