@@ -1,4 +1,3 @@
 # Study of JS HTML5 CSS3
-## 1 Preview - test
-[Githubpages](https://luosixian.github.io)
-
+This is an exercise of some demo for frontend.
+よく見かけるコンポーネントを実装してみました。
